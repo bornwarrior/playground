@@ -27,7 +27,7 @@ namespace SoftwareChallenge.Explorer.Tests.Integration
             string expectedResult = "Hello World";
             
             //act
-            var getResponse = await testClient.GetAsync($"api/values/{id}");
+            var getResponse = await testClient.GetAsync($"api/weather/{id}");
 
             //asert
             getResponse.EnsureSuccessStatusCode();
