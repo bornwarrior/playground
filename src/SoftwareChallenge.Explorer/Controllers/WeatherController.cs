@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SoftwareChallenge.Explorer.WeatherClient;
 
 namespace SoftwareChallenge.Explorer.Controllers
 {
@@ -22,6 +23,12 @@ namespace SoftwareChallenge.Explorer.Controllers
         {
             return "Hello World";
         }
+
+        // [HttpGet("{cityname}")]
+        // public string GetWeather(int id)
+        // {
+            
+        // }
 
         // // POST api/values
         // [HttpPost]
