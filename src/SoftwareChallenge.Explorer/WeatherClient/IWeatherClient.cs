@@ -1,10 +1,11 @@
 using System;
+using SoftwareChallenge.Explorer.Models.CityWeather;
 
 namespace SoftwareChallenge.Explorer.WeatherClient
 {
     public interface IWeatherClient
     {
-        string GetCityWeather(string country, string cityName);
+        CityWeather GetCityWeather(string country, string cityName);
     }
 
 }

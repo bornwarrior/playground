@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace SoftwareChallenge.Explorer.WeatherClient
 {
-    public class HttpWeatherClient
+    public class HttpWeatherClient : IWeatherClient
     {
         private string weatherServiceUrl;
         private string weatherAppKey;
@@ -37,7 +37,7 @@ namespace SoftwareChallenge.Explorer.WeatherClient
             return cityWeather;
         }
 
-         private CityWeather GetWeatherFromApp(string countryName, string cityName)
+        private CityWeather GetWeatherFromApp(string countryName, string cityName)
         {
             RestClient client = new RestClient(weatherServiceUrl);
             var request = new RestRequest("?q={cityName}&appid={appId}", Method.GET);
