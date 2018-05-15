@@ -13,9 +13,13 @@ namespace SoftwareChallenge.Explorer
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private ILogger logger;
+        private ILoggerFactory loggerFactory;
+        public Startup(IConfiguration configuration,ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
+            this.loggerFactory = loggerFactory;
+            this.logger = this.loggerFactory.CreateLogger("Startup");
         }
 
         public IConfiguration Configuration { get; }
@@ -24,6 +28,9 @@ namespace SoftwareChallenge.Explorer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            // services.AddSingleton<IConfiguration>(Configuration);
+            // string url = Configuration["WeatherApi:Url"];
+            // logger.LogInformation($"Using WeatherApi: {url}");
           
         }
 

@@ -4,12 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SoftwareChallenge.Explorer.WeatherClient;
+using Microsoft.Extensions.Logging;
+
 
 namespace SoftwareChallenge.Explorer.Controllers
 {
     [Route("api/[controller]")]
     public class WeatherController : Controller
     {
+          private readonly ILogger<WeatherController> logger;
+
+          public WeatherController(ILogger<WeatherController> logger)
+          {
+              this.logger = logger;
+          }
         // GET api/values
         // [HttpGet]
         // public IEnumerable<string> Get()
@@ -21,6 +29,7 @@ namespace SoftwareChallenge.Explorer.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
+            logger.LogInformation($"Get Called with {id}");
             return "Hello World";
         }
 
