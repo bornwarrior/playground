@@ -30,11 +30,7 @@ namespace SoftwareChallenge.Explorer
         {
             services.AddMvc();
             
-            //TODO
-            // services.AddSingleton<IConfiguration>(Configuration);
-            // string url =  Configuration.GetSection("WeatherApi:Url").Value;
-            // logger.LogInformation($"Using WeatherApi{url}");
-
+            //TODO from config
             string url = "http://api.openweathermap.org/data/2.5/weather";
             string appkey = "5eeccbf0617f7a28275ab74a8f503243";
 

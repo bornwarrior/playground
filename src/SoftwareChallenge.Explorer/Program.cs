@@ -19,17 +19,7 @@ namespace SoftwareChallenge.Explorer
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-             //   .ConfigureAppConfiguration(AddAppConfiguration)
                 .UseStartup<Startup>()
                 .Build();
-
-    //     public static void AddAppConfiguration(
-    //             WebHostBuilderContext hostingContext,
-    //             IConfigurationBuilder config)
-    //     {
-    //         var env = hostingContext.HostingEnvironment;
-    //         config.SetBasePath(env.ContentRootPath)
-    //             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-    //     }
      }
 }

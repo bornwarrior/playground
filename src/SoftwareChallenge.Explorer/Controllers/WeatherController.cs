@@ -25,6 +25,8 @@ namespace SoftwareChallenge.Explorer.Controllers
         [HttpGet("{cityName}")]
         public string Get(string cityName)
         {
+            //TODO validate cityName
+
             //for Canadain city now
             CityWeather resultWeather = wClient.GetCityWeather("CA",cityName);
 
@@ -35,10 +37,5 @@ namespace SoftwareChallenge.Explorer.Controllers
 
         }
 
-        // [HttpGet("{cityname}")]
-        // public string GetWeather(int id)
-        // {
-
-        // }
     }
 }
