@@ -31,10 +31,18 @@ namespace SoftwareChallenge.Explorer.Controllers
             CityWeather resultWeather = wClient.GetCityWeather("CA",cityName);
 
             if (resultWeather != null)
-                return resultWeather.weather[0].description;
-            else
-                return $"Unable to Retrive Weather for {cityName}";
+            {
+                double temprature = 300 - resultWeather.main.temp;
+                temprature = Math.Round(temprature, 2);
+                return $"{cityName.ToUpper()}: Temprature: {temprature} °C Description: {resultWeather.weather[0].description }";
 
+            }
+                
+            else
+            {
+                return $"Unable to Retrive Weather for {cityName}";
+            }
+            
         }
 
     }
